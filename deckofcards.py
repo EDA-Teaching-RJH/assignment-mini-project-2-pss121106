@@ -29,7 +29,7 @@ class deck:
             for rank in ranks:
                 self.cards.append(showcard(suit, rank))
             for show in ['J', 'Q', 'K']:
-                self.cards.append(showcard)(suit, show)
+                self.cards.append(showcard(suit, show))
         random.shuffle(self.cards)
     def deal(self):
         return self.cards.pop() if self.cards else None

@@ -7,7 +7,7 @@ SAVE_FILE = "save.txt"
 def validate_user():
     pattern = re.compile(r"^[a-zA-Z0-9]{3,10}$")
     while True: 
-        name = input("Enter name")
+        name = input("Enter name ")
         if pattern.fullmatch(name):
             return name
         print("Invalid name. Letters or Numbers only!")
@@ -37,7 +37,7 @@ def play_game():
     if not name:
         name = validate_user()
 
-    deck = deckofcards.Deck()
+    deck = deckofcards.deck()
     print(f"\n-Welcome {name}. Balance: £{balance}-")
     while balance > 0:
         try:
