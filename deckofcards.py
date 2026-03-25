@@ -15,3 +15,10 @@ class card:
         return int(self.rank)
     def __str__(self):
         return f"[{self.rank}{self.symbol}"
+    
+class showcard(card)
+    """OOP Inheritance: J, Q, K alqays equal to 10"""
+    def value(self):
+        return 10 
+
+        
