@@ -17,12 +17,10 @@ class card:
         return f"[{self.rank}{self.symbol}"
     
 class showcard(card):
-    """OOP Inheritance: J, Q, K alqays equal to 10"""
     def value(self):
         return 10 
     
 class deck: 
-    """OOP Composition: Manages the card collection."""
     def __init__(self):
         self.cards = []
         suits = ['Spades', 'Hearts', 'Clubs', 'Diamonds']
