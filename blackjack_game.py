@@ -31,3 +31,18 @@ def get_hand_score(hand):
         if total > 21 and is_ace[i]:
             total-= 10
     return total 
+
+def play_game():
+    name, balance = file_operations(mode='read')
+    if not name:
+        name = validate_user()
+
+    deck = deckofcards.Deck()
+    print(f"\n-Welcome {name}. Balance: £{balance}-")
+    while balance > 0:
+        try:
+            bet = int(input(f"\nEnter bet (Balance: £{balance}): "))
+            if bet > balance or bet <= 0: raise ValueError
+        except ValueError:
+            print("Invalid bet.")
+            continue
