@@ -84,4 +84,11 @@ def play_game():
                 balance -=bet
             else:
                 print("Push.")
-                
+        
+        file_operations(name, balance, mode='write')
+        if input("\nDare to play again? (y/n): ").lower() != 'y':
+            print(f"Well played {name}. Final Balance: £{balance}")
+            break
+
+if __name__ == "__main__":
+    play_game()
