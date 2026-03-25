@@ -86,7 +86,8 @@ def play_game():
                 print("Push.")
         
         file_operations(name, balance, mode='write')
-        if input(f"\nDare to play again? (y/n): ").lower() != 'y':
+        again = input(f"\nDare to play again? (y/n): ").lower() 
+        if again != 'y':
             print(f"Well played {name}. Final Balance: £{balance}")
             break
 
