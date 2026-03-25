@@ -14,7 +14,7 @@ class card:
         if self.rank == 'A': return 11
         return int(self.rank)
     def __str__(self):
-        return f"[{self.rank}{self.symbol}"
+        return f"{self.rank}{self.symbol}"
     
 class showcard(card):
     def value(self):

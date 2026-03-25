@@ -51,12 +51,12 @@ def play_game():
 
         while True:
             pscore = get_hand_score(player_hand)
-            print("\nYour hand: {' '.join(map(str, player_hand))} - Score: {pscore}")
+            print(f"\nYour hand: {' '.join(map(str, player_hand))} - Score: {pscore}")
             print(f"Dealer shows: {dealer_hand[1]}")
             if pscore >= 21: break
             move = input("Hit or Stand? ").lower()
             if move == 'h':
-                player_hand.append(deckofcards.deal())
+                player_hand.append(deck.deal())
             elif move == 's':
                 break
 
@@ -86,7 +86,7 @@ def play_game():
                 print("Push.")
         
         file_operations(name, balance, mode='write')
-        if input("\nDare to play again? (y/n): ").lower() != 'y':
+        if input(f"\nDare to play again? (y/n): ").lower() != 'y':
             print(f"Well played {name}. Final Balance: £{balance}")
             break
 
