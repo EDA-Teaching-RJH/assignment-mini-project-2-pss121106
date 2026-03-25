@@ -54,3 +54,9 @@ def play_game():
             print("\nYour hand: {' '.join(map(str, player_hand))} - Score: {pscore}")
             print(f"Dealer shows: {dealer_hand[1]}")
             if pscore >= 21: break
+            move = input("Hit or Stand? ").lower()
+            if move == 'h':
+                player_hand.append(deckofcards.deal())
+            elif move == 's':
+                break
+            
