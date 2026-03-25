@@ -72,3 +72,16 @@ def play_game():
                 dealer_hand.append(deck.deal())
                 dscore = get_hand_score(dealer_hand)
                 print(f"Dealer has: {' '.join(map(str, dealer_hand))} (Score: {dscore})")
+
+            if dscore > 21:
+                print("Dealer Busts! You win!")
+                balance += bet
+            elif pscore > dscore:
+                print("You win.")
+                balance +=bet
+            elif dscore > pscore:
+                print ("Dealer wins.")
+                balance -=bet
+            else:
+                print("Push.")
+                
