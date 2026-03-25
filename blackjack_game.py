@@ -90,6 +90,10 @@ def play_game():
         if again != 'y':
             print(f"Well played {name}. Final Balance: £{balance}")
             break
-
+        if balance <= 0:
+            print("The house won. Game Over.")
+            name = None
+            break
+            
 if __name__ == "__main__":
     play_game()
