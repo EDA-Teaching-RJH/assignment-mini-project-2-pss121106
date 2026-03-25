@@ -46,3 +46,11 @@ def play_game():
         except ValueError:
             print("Invalid bet.")
             continue
+        player_hand = [deck.deal(), deck.deal()]
+        dealer_hand = [deck.deal(), deck.deal()]
+
+        while True:
+            pscore = get_hand_score(player_hand)
+            print("\nYour hand: {' '.join(map(str, player_hand))} - Score: {pscore}")
+            print(f"Dealer shows: {dealer_hand[1]}")
+            if pscore >= 21: break
