@@ -11,7 +11,8 @@ class card:
         self.rank = rank 
         self.symbol = self.suit_codes.get(suit, suit)
     def value(self):
-        if self.rank == 'A': return 11
+        if self.rank == 'A': 
+            return 11
         return int(self.rank)
     def __str__(self):
         return f"{self.rank}{self.symbol}"
@@ -27,7 +28,7 @@ class deck:
         ranks = [str(n) for n in range(2, 11)] + ['A']
         for suit in suits:
             for rank in ranks:
-                self.cards.append(showcard(suit, rank))
+                self.cards.append(card(suit, rank))
             for show in ['J', 'Q', 'K']:
                 self.cards.append(showcard(suit, show))
         random.shuffle(self.cards)
