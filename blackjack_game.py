@@ -29,7 +29,7 @@ def get_hand_score(hand):
     total = sum(values)
     for i in range(len(values)):
         if total > 21 and is_ace[i]:
-            total-= 10
+            total -= 10
     return total 
 
 def play_game():
