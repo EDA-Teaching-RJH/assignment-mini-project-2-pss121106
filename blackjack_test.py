@@ -18,23 +18,24 @@ def test_card_values():
         actual = c.value()
         status = "PASS" if actual == expected else "FAIL"
         print(f"Card: {c},  - Expected: {expected}, - Actual: {actual}, - {status}")
-    
-    def test_scoring_logic():
-        print("- Testing hand scoring -")
-        test_hands = [
-            ([deckofcards.card('Spades','10'), deckofcards.showcard('Clubs', 'J')], 20),
-            ([deckofcards.card('Hearts','A'), deckofcards.card('Diamonds','9')], 20),
-            ([deckofcards.card('Hearts','A'), deckofcards.card('Diamonds','A')], 12),
-                ([deckofcards.card('Hearts','A'), deckofcards.card('Diamonds','A'), deckofcards.card('Clubs','7')], 13),
-            ]
-        for hand, expected in test_hands:
-                actual = get_hand_score(hand)
-                status = "Pass" if actual == expected else "Fail"
-                hand_str = ', '.join(str(card) for card in hand)
-                print(f"Hand: [{hand_str}] - Expected: {expected} - Actual: {actual} - {status}")
-    
-    if __name__ == "__main__":
-        test_card_values()
-        test_scoring_logic()
+
+def test_scoring_logic():
+    print("- Testing hand scoring -")
+    test_hands = [
+        ([deckofcards.card('Spades','10'), deckofcards.showcard('Clubs', 'J')], 20),
+        ([deckofcards.card('Hearts','A'), deckofcards.card('Diamonds','9')], 20),
+        ([deckofcards.card('Hearts','A'), deckofcards.card('Diamonds','A')], 12),
+        ([deckofcards.card('Hearts','A'), deckofcards.card('Diamonds','A'), deckofcards.card('Clubs','7')], 13),
+    ]
+    for hand, expected in test_hands:
+        actual = get_hand_score(hand)
+        status = "Pass" if actual == expected else "Fail"
+        hand_str = ', '.join(str(card) for card in hand)
+        print(f"Hand: [{hand_str}] - Expected: {expected} - Actual: {actual} - {status}")
+
+if __name__ == "__main__":
+    test_card_values()
+    test_scoring_logic()
+        
         
         
