@@ -1,9 +1,9 @@
 import deckofcards
 from blackjack_game import get_hand_score
-def test_get_hand_score():
+def test_card_values():
     print("-Testing Card values")
     test_cases = [
-        ('Spades', '2', 2)
+        ('Spades', '2', 2),
         ('Hearts', '10', 10),
         ('Diamonds', 'J', 10),
         ('Clubs', 'Q', 10),
@@ -25,6 +25,16 @@ def test_get_hand_score():
             ([deckofcards.card('Spades','10'), deckofcards.showcard('Clubs', 'J')], 20),
             ([deckofcards.card('Hearts','A'), deckofcards.card('Diamonds','9')], 20),
             ([deckofcards.card('Hearts','A'), deckofcards.card('Diamonds','A')], 12),
-            ([deckofcards.card('Hearts','A'), deckofcards.card('Diamonds','A'), deckofcards.card('Clubs','7')], 13)
+                ([deckofcards.card('Hearts','A'), deckofcards.card('Diamonds','A'), deckofcards.card('Clubs','7')], 13),
             ]
-        for hand, expected
+        for hand, expected in test_hands:
+                actual = get_hand_score(hand)
+                status = "Pass" if actual == expected else "Fail"
+                hand_str = ', '.join(str(card) for card in hand)
+                print(f"Hand: [{hand_str}] - Expected: {expected} - Actual: {actual} - {status}")
+    
+    if __name__ == "__main__":
+        test_card_values()
+        test_scoring_logic()
+        
+        
