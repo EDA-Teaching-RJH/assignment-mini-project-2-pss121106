@@ -34,8 +34,12 @@ def get_hand_score(hand):
 
 def play_game():
     name, balance = file_operations(mode='read')
-    if not name:
+    if not name or balance <= 0:
         name = validate_user()
+        balance = 1000
+        while balance > 0:
+            file_operations(name, balance, mode='write')
+            break
 
     deck = deckofcards.deck()
     print(f"\n-Welcome {name}. Balance: £{balance}-")
